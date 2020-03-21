@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MagicEightBall from '../components/MagicEightBall';
+import styles from './Styles.module.css';
 
 class Layout extends Component{
 
@@ -10,7 +11,7 @@ class Layout extends Component{
 
     render() {
         return (
-            <div>
+            <div className={styles.main}>
              <MagicEightBall />
             </div>
         )
