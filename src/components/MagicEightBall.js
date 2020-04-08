@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import styles from './MagicEightBall';
 // import ReactDOM from 'react-dom';
 
 const inputStyle = {
-    width: 235,
-    margin: 5,
-    color: 'red'
+    color: 'purple'
 }
 
 class MagicEightBall extends Component {
@@ -12,17 +11,21 @@ class MagicEightBall extends Component {
         super(props)
         this.state = {
             userInput: '',
-            randomIndex: ''
+            randomIndex: '',
+            isClicked: false,
+            messages: []
         }
     }
 
-    ask = () => {
+    ask = (event) => {
         if(this.state.userInput) {
             this.setState({
                 randomIndex: Math.floor(Math.random() * 20),
                 userInput: ''
             })
+            
         }
+
         console.log(this.state.randomIndex);
     }
 
@@ -30,8 +33,22 @@ class MagicEightBall extends Component {
         this.setState({
             userInput: event.target.value
         })
-        console.log('userInput: ', this.state.userInput);
+        // console.log('userInput: ', this.state.userInput);
     }
+
+    //Goddamn it, it took me hours to figure out how to get the enter button to trigger the button without using a mouse to click the button. All I had to fucking do was call the ask function (method?) in the the handleKeyPress() if the event.key is === 'Enter'
+    
+    handleKeyPress = (event) => {
+        if(event.key === 'Enter') {
+            this.ask();
+            console.log(event.key)
+            event.preventDefault()
+           
+          }
+    }  
+
+
+    
 
     render() {
         const possibleAnswers = [
@@ -59,14 +76,25 @@ class MagicEightBall extends Component {
           const answer = possibleAnswers[this.state.randomIndex]; // << change code here
 
     return (
-      <div>
+      <div className='center-block'>
         <input
           type="text"
+          className='form-control input'
+          id='mainInput'
+          placeholder='Ask Away!'
           value={this.state.userInput}
           onChange={this.handleChange}
-          style={inputStyle} />
+          onKeyPress={this.handleKeyPress}
+          style={inputStyle}
+        />
+          
           <br />
-        <button onClick={this.ask}>
+        <button 
+          className='btn primary'
+          onClick={this.ask}
+          type='submit'
+          loading={this.state.Load}
+          >
           Ask the Magic Eight Ball!
         </button><br />
         <h3>Answer:</h3>
