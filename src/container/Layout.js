@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MagicEightBall from '../components/MagicEightBall';
-import styles from './Styles.module.css';
+import styles from './Layout.module.css';
 
 class Layout extends Component{
 
