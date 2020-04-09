@@ -20,31 +20,34 @@ class MagicEightBall extends Component {
         
         if(this.state.userInput) {
             this.setState({
-                randomIndex: Math.floor(Math.random() * 20),
+                randomIndex: Math.floor(Math.random() * 23),
                 userInput: ''
             })
             
         } 
         console.log(this.state.userInput)
-        console.log(this.state.randomIndex);
+        console.log(this.state.randomIndex)
     }
 
     handleChange = (event) => {
         this.setState({
             userInput: event.target.value
         })
-
+       
     }
 
     //Goddamn it, it took me hours to figure out how to get the enter button to trigger the button without using a mouse to click the button. All I had to fucking do was call the ask function (method?) in the the handleKeyPress() if the event.key is === 'Enter'
+
     handleKeyPress = (event) => {
         if(event.key === 'Enter') {
             this.ask();
             console.log(event.key)
-            event.preventDefault()
+            // event.preventDefault()
           }
           
     }  
+
+    
 
 
     
@@ -70,7 +73,10 @@ class MagicEightBall extends Component {
             'My sources say no',
             'Most likely',
             'Outlook not so good',
-            'Very doubtful'
+            'Very doubtful',
+            'Cheer up, your future looks bright',
+            'Why would you even ask me something like that?',
+            'What a weirdo'
           ];
           const answer = possibleAnswers[this.state.randomIndex]; 
 
