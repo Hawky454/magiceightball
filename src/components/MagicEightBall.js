@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './MagicEightBall';
+import styles from './MagicEightBall.module.css';
 // import ReactDOM from 'react-dom';
 
 const inputStyle = {
@@ -12,21 +12,20 @@ class MagicEightBall extends Component {
         super(props)
         this.state = {
             userInput: '',
-            randomIndex: '',
-            isClicked: false,
-            messages: []
+            randomIndex: ''
         }
     }
 
     ask = (event) => {
+        
         if(this.state.userInput) {
             this.setState({
                 randomIndex: Math.floor(Math.random() * 20),
                 userInput: ''
             })
             
-        }
-
+        } 
+        console.log(this.state.userInput)
         console.log(this.state.randomIndex);
     }
 
@@ -34,7 +33,7 @@ class MagicEightBall extends Component {
         this.setState({
             userInput: event.target.value
         })
-        // console.log('userInput: ', this.state.userInput);
+
     }
 
     //Goddamn it, it took me hours to figure out how to get the enter button to trigger the button without using a mouse to click the button. All I had to fucking do was call the ask function (method?) in the the handleKeyPress() if the event.key is === 'Enter'
@@ -43,8 +42,8 @@ class MagicEightBall extends Component {
             this.ask();
             console.log(event.key)
             event.preventDefault()
-           
           }
+          
     }  
 
 
@@ -76,10 +75,10 @@ class MagicEightBall extends Component {
           const answer = possibleAnswers[this.state.randomIndex]; // << change code here
 
     return (
-      <div className='center-block'>
+      <div className={styles.magicball}>
         <input
           type="text"
-          className='form-control input'
+          className='form-control'
           id='mainInput'
           placeholder='Ask Away!'
           value={this.state.userInput}
@@ -90,7 +89,7 @@ class MagicEightBall extends Component {
           
           <br />
         <button 
-          className='btn primary'
+          className='btn primary btn-info'
           onClick={this.ask}
           type='submit'
           >
