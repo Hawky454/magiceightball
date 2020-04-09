@@ -72,7 +72,7 @@ class MagicEightBall extends Component {
             'Outlook not so good',
             'Very doubtful'
           ];
-          const answer = possibleAnswers[this.state.randomIndex]; // << change code here
+          const answer = possibleAnswers[this.state.randomIndex]; 
 
     return (
       <div className={styles.main}>
@@ -96,7 +96,8 @@ class MagicEightBall extends Component {
           Ask the Magic Eight Ball!
         </button><br />
         <h3>Answer:</h3>
-        <p>{answer}</p>
+        {/* I can't belive I made this work, I wanted to add an '!' but I was getting an answer as undefined on my page this fixed that issue*/}
+        <p className={styles.answer}>{answer ? answer + '!' : null}</p>
       </div>
     );
       

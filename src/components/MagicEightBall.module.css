@@ -1,11 +1,14 @@
 .main {
     width: 50%;
-    margin: auto;
-    /* margin: 20px 200px;
-    margin-right: 100px; */
+    margin: 75px auto;
     height: 250px;
-    border: 1px red solid;
-    /* overflow: scroll; */
+    /* border: 1px red solid; */
     text-align: center;
     font-weight: bold;
+    color: grey;
+}
+
+.answer {
+    color: blue;
+    font-size: 20px;
 }
