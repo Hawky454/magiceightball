@@ -1,3 +1,4 @@
 .input {
-    color: green;
+    color: green !important;
+    text-align: center !important;
 }

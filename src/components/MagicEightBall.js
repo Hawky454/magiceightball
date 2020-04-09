@@ -3,7 +3,8 @@ import styles from './MagicEightBall';
 // import ReactDOM from 'react-dom';
 
 const inputStyle = {
-    color: 'purple'
+    color: 'purple',
+    textAlign: 'center'
 }
 
 class MagicEightBall extends Component {
@@ -92,7 +93,6 @@ class MagicEightBall extends Component {
           className='btn primary'
           onClick={this.ask}
           type='submit'
-          loading={this.state.Load}
           >
           Ask the Magic Eight Ball!
         </button><br />
