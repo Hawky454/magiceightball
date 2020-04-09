@@ -1,10 +1,8 @@
-.magicball {
-    border: 1px solid blue;
-}
-
 .main {
-    width: 100%;
+    width: 50%;
     margin: auto;
+    /* margin: 20px 200px;
+    margin-right: 100px; */
     height: 250px;
     border: 1px red solid;
     /* overflow: scroll; */
