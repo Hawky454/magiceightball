@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import styles from './MagicEightBall.module.css';
 // import ReactDOM from 'react-dom';
 
-const inputStyle = {
-    color: 'purple',
-    textAlign: 'center'
-}
+// const inputStyle = {
+//     color: 'purple',
+//     textAlign: 'center'
+// }
 
 class MagicEightBall extends Component {
     constructor(props) {
@@ -84,7 +84,7 @@ class MagicEightBall extends Component {
           value={this.state.userInput}
           onChange={this.handleChange}
           onKeyPress={this.handleKeyPress}
-          style={inputStyle}
+        //   style={inputStyle}
         />
           
           <br />
