@@ -15,6 +15,6 @@
 
 /* Not sure why this isn't working but it works when I just apply it as in the JSX file MagidEightBall */
 input {
-    /* text-align: center; */
+    text-align: center;
     color: purple;
 }
