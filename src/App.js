@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Layout from '../src/container/Layout';
 import './App.css';
+import MagicEightBall from './components/MagicEightBall';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Layout />
+        <MagicEightBall />
       </div>
     );
   }

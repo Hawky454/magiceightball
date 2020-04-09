@@ -75,7 +75,7 @@ class MagicEightBall extends Component {
           const answer = possibleAnswers[this.state.randomIndex]; // << change code here
 
     return (
-      <div className={styles.magicball}>
+      <div className={styles.magicball, styles.main}>
         <input
           type="text"
           className='form-control'
