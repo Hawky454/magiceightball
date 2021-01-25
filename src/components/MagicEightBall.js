@@ -23,7 +23,7 @@ class MagicEightBall extends Component {
                 randomIndex: Math.floor(Math.random() * 20),
                 userInput: ''
             })
-            
+          
         }
 
         console.log(this.state.randomIndex);
@@ -33,7 +33,7 @@ class MagicEightBall extends Component {
         this.setState({
             userInput: event.target.value
         })
-        // console.log('userInput: ', this.state.userInput);
+        console.log('userInput: ', this.state.userInput);
     }
 
     //Goddamn it, it took me hours to figure out how to get the enter button to trigger the button without using a mouse to click the button. All I had to fucking do was call the ask function (method?) in the the handleKeyPress() if the event.key is === 'Enter'
@@ -41,11 +41,13 @@ class MagicEightBall extends Component {
     handleKeyPress = (event) => {
         if(event.key === 'Enter') {
             this.ask();
-            console.log(event.key)
-            event.preventDefault()
+            console.log('event.key =', event.key)
+            // event.preventDefault()
            
           }
     }  
+
+    
 
 
     
