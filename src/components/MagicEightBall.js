@@ -3,7 +3,9 @@ import styles from './MagicEightBall';
 // import ReactDOM from 'react-dom';
 
 const inputStyle = {
-    color: 'purple'
+    color: 'purple',
+    fontWeight: 'bold',
+    fontSize: 18
 }
 
 class MagicEightBall extends Component {
